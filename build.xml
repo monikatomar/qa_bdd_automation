@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+	<project basedir="." default="build" name="MagzineValidate">
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="../../../Monika/Softwares/Eclipse_Mars/eclipse/"/>
+    <property name="junit.output.dir" value="junit"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.8"/>
+    <property name="source" value="1.8"/>
+    <path id="MagzineValidate.classpath">
+        <pathelement location="bin"/>
+        <pathelement location="lib/commons-io-2.5.jar"/>
+        <pathelement location="lib/cucumber-core-1.2.5.jar"/>
+        <pathelement location="lib/cucumber-html-0.2.3.jar"/>
+        <pathelement location="lib/cucumber-java-1.2.0.jar"/>
+        <pathelement location="lib/cucumber-junit-1.2.5.jar"/>
+        <pathelement location="lib/cucumber-jvm-deps-1.0.6.jar"/>
+        <pathelement location="lib/cucumber-reporting-3.10.0.jar"/>
+        <pathelement location="lib/gherkin-2.12.2.jar"/>
+        <pathelement location="lib/guava-19.0.jar"/>
+        <pathelement location="lib/junit-4.12.jar"/>
+        <pathelement location="lib/selenium-api-3.0.1.jar"/>
+        <pathelement location="lib/selenium-chrome-driver-3.0.1.jar"/>
+        <pathelement location="lib/selenium-edge-driver-3.0.1.jar"/>
+        <pathelement location="lib/selenium-firefox-driver-3.0.1.jar"/>
+        <pathelement location="lib/selenium-ie-driver-3.0.1.jar"/>
+        <pathelement location="lib/selenium-java-3.0.1.jar"/>
+        <pathelement location="lib/selenium-opera-driver-3.0.1.jar"/>
+        <pathelement location="lib/selenium-remote-driver-3.0.1.jar"/>
+        <pathelement location="lib/selenium-safari-driver-3.0.1.jar"/>
+        <pathelement location="lib/selenium-support-3.0.1.jar"/>
+        <pathelement location="lib/testng-6.1.1.jar"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="MagzineValidate.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target name="TestContactFormRunner">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="test.java.TestContactFormRunner" todir="${junit.output.dir}"/>
+            <classpath refid="MagzineValidate.classpath"/>
+        </junit>
+    </target>
+    <target name="TestHomePageLinkRunner">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="test.java.TestHomePageLinkRunner" todir="${junit.output.dir}"/>
+            <classpath refid="MagzineValidate.classpath"/>
+        </junit>
+    </target>
+    <target name="TestNewsLetterRunner">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="test.java.TestNewsLetterRunner" todir="${junit.output.dir}"/>
+            <classpath refid="MagzineValidate.classpath"/>
+        </junit>
+    </target>
+    <target name="TestLocationSearchRunner">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="test.java.TestLocationSearchRunner" todir="${junit.output.dir}"/>
+            <classpath refid="MagzineValidate.classpath"/>
+        </junit>
+    </target>
+    <target name="TestAllScenarioRunner">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="test.java.TestAllScenarioRunner" todir="${junit.output.dir}"/>
+            <classpath refid="MagzineValidate.classpath"/>
+        </junit>
+    </target>
+    <target name="junitreport">
+        <junitreport todir="${junit.output.dir}">
+            <fileset dir="${junit.output.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" todir="${junit.output.dir}"/>
+        </junitreport>
+    </target>
+</project>

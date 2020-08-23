@@ -1,0 +1,40 @@
+  @searchLocation
+  Scenario Outline: Customer wants to search location by using search bar   [90m# LocationSearch.feature:14 [0m
+      [32mGiven   [0m [32mUser has launched the Trivago Magzine site [0m                        [90m# LocationSearch.openMagzineUrl() [0m
+      [32mWhen   [0m [32mUser clicks on the search icon [0m                                     [90m# LocationSearch.clickSearchIcon() [0m
+      [32mThen   [0m [32mUser sees the search page [0m                                          [90m# LocationSearch.searchEnabled() [0m
+      [32mWhen   [0m [32mUser enters the location as   [0m [32m [1mGermany [0m [32m in the search field [0m            [90m# LocationSearch.enterDataSearch(String) [0m
+      [32mAnd   [0m [32mUser clicks on search [0m                                               [90m# LocationSearch.clickSearch() [0m
+      [32mThen   [0m [32mUser verifies the location search results [0m                          [90m# LocationSearch.validateResults() [0m
+
+1 Scenarios ( [32m1 passed [0m)
+6 Steps ( [32m6 passed [0m)
+0m47.328s
+
+
+  @newsLetterSubscribe
+  Scenario Outline: Customer wants to test the NewsLetter Subscription for Trivago Magzine[90m# NewsLetterSubscription.feature:14 [0m
+   [32mGiven[0m [32mUser has opened the Trivago Magzine site [0m                                        [90m# NewsLetterSubsription.openMagzineUrl() [0m
+   [32mAnd[0m [32mUser sees the newsletter subscribe field [0m                                          [90m# NewsLetterSubsription.verifyField() [0m
+   [32mWhen[0m [32mUser provides the email Address as " [0m [32m [1mmonikasinghtomar@gmail.com [0m [32m" [0m                  [90m# NewsLetterSubsription.enterEmailAddress(String) [0m
+   [32mAnd[0m [32mUser clicks on Inspire me button [0m                                                  [90m# NewsLetterSubsription.clickOnSubmit() [0m
+   [32mThen[0m [32mUser sees the successful[0m [32m [1mYou are now checked-in! [0m [32m message [0m                         [90m# NewsLetterSubsription.verifyMessage(String) [0m
+
+1 Scenarios ( [32m1 passed [0m)
+5 Steps ( [32m5 passed [0m)
+0m44.647s
+
+  @contactForm
+  Scenario Outline: Customer wants to validate the contact link for sending query by Contact form  [90m# ContactForm.feature:17   [0m
+     [32mGiven  [0m   [32mUser has opened the Trivago Magzine site url   [0m                                             [90m# ContactFormValidate.openMagzineURL()   [0m
+     [32mWhen  [0m   [32mUser clicks on contact link at footer on Magzine site   [0m                                     [90m# ContactFormValidate.clickOnContact()   [0m
+     [32mThen  [0m   [32mUser moves to contact page and sees appropiate fields   [0m                                     [90m# ContactFormValidate.verifyFields()   [0m
+     [32mWhen  [0m   [32mUser provides the details as  [0m   [32m   [1mThis is a test message   [0m   [32m,   [0m   [32m   [1mMonika Tomar   [0m   [32m,   [0m   [32m   [1mmonikatomar09@yahoo.com   [0m  [90m# ContactFormValidate.enterUserData(String,String,String)   [0m
+     [32mAnd  [0m   [32mUser clicks on confirm check box button   [0m                                                    [90m# ContactFormValidate.clickOnConfirmCheckBox()   [0m
+     [32mAnd  [0m   [32mUser clicks on Submit button   [0m                                                               [90m# ContactFormValidate.clickOnSubmit()   [0m
+     [32mThen  [0m   [32mUser verifies the success message as  [0m   [32m   [1mMessage Sent Successfully!   [0m                           [90m# ContactFormValidate.verifyMessage(String)   [0m
+
+1 Scenarios (   [32m1 passed   [0m)
+7 Steps (   [32m7 passed   [0m)
+1m20.782s
+
